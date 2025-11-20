@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دوس لتأجير السيارات | DOOS Rental</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                DEFAULT: '#d4af37',
+                soft: '#f3e4a6',
+                dark: '#241b08',
+              },
+              dark: {
+                bg: '#050509',
+                section: '#0f0f17',
+                accent: '#1f2933',
+              }
+            },
+            boxShadow: {
+              'soft': '0 14px 35px rgba(0,0,0,0.55)',
+              'glow': '0 0 18px rgba(212,175,55,0.45)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background: radial-gradient(circle at top, #151520 0, #050509 55%);
+        min-height: 100vh;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050509; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="text-gray-100 antialiased selection:bg-gold selection:text-black overflow-x-hidden">
+    <div id="root"></div>
+  </body>
+</html>
