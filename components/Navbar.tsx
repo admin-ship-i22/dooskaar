@@ -16,8 +16,10 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const options = { passive: true } as const;
+    handleScroll(); // initialize correct state on first render
+    window.addEventListener('scroll', handleScroll, options);
+    return () => window.removeEventListener('scroll', handleScroll, options);
   }, []);
 
   const scrollToSection = (id: string) => {
