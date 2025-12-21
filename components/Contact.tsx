@@ -94,7 +94,14 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-auto">
-              <Button variant="outline" onClick={() => window.open("https://wa.me/966500000000", "_blank")}>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  // Prevent reverse-tabnabbing by disabling `window.opener`.
+                  const newWindow = window.open("https://wa.me/966500000000", "_blank", "noopener,noreferrer");
+                  if (newWindow) newWindow.opener = null;
+                }}
+              >
                 <MessageSquare size={14} />
                 تواصل عبر الواتساب
               </Button>

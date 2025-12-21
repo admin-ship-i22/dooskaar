@@ -4,7 +4,9 @@ import { Button } from './ui/Button';
 
 export const Hero: React.FC = () => {
   const openWhatsApp = () => {
-    window.open("https://wa.me/966500000000", "_blank");
+    // Prevent reverse-tabnabbing by disabling `window.opener`.
+    const newWindow = window.open("https://wa.me/966500000000", "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
   };
 
   return (

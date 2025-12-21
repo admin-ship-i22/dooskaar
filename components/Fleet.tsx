@@ -64,7 +64,11 @@ export const Fleet: React.FC = () => {
               </div>
 
               <button 
-                onClick={() => window.open("https://wa.me/966500000000", "_blank")}
+                onClick={() => {
+                  // Prevent reverse-tabnabbing by disabling `window.opener`.
+                  const newWindow = window.open("https://wa.me/966500000000", "_blank", "noopener,noreferrer");
+                  if (newWindow) newWindow.opener = null;
+                }}
                 className="w-full flex items-center justify-between text-[11px] text-gold-soft hover:text-white transition-colors group-hover:translate-x-[-4px] duration-200"
               >
                 احجز هذه الفئة الآن
