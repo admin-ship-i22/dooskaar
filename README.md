@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# DOOS Rental - Vehicle Rental Management System
 
-# Run and deploy your AI Studio app
+This is a complete vehicle rental management application with a React frontend and Express/SQLite backend.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1McCLybE_z2SHYfyQsrUJ81VBscEFLPZc
+- Vehicle management
+- Customer management
+- Booking system with availability checks
+- Admin authentication
+- Real-time data synchronization
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
+### Quick Start
+
+**Option 1: Using npm**
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Run the application:
+   ```bash
+   npm start
+   ```
+
+**Option 2: Using startup scripts**
+
+- **Linux/Mac:** Run `./start.sh`
+- **Windows:** Run `start.bat`
+
+This will start both the backend server (http://localhost:3001) and the frontend (http://localhost:3000).
+
+### Run Servers Separately
+
+If you need to run the servers separately:
+
+- Backend server: `npm run dev:server` (runs on port 3001)
+- Frontend: `npm run dev` (runs on port 3000)
+
+## Configuration
+
+The following environment variables can be set (all are optional):
+
+- `PORT` - Backend server port (default: 3001)
+- `ADMIN_PASSWORD` - Admin login password (default: "admin")
+- `DATABASE_PATH` - SQLite database path (default: "server/data.sqlite")
+
+## Default Admin Credentials
+
+- Password: `admin` (can be changed via `ADMIN_PASSWORD` environment variable)
