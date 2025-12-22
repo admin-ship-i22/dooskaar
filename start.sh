@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e  # Exit on any error
 
 # DOOS Rental Startup Script
 # This script starts both the backend server and frontend development server
@@ -9,7 +10,10 @@ echo ""
 # Check if node_modules exists
 if [ ! -d "node_modules" ]; then
     echo "📦 Installing dependencies..."
-    npm install
+    npm install || {
+        echo "❌ Failed to install dependencies"
+        exit 1
+    }
     echo ""
 fi
 
